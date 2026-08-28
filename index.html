@@ -1,151 +1,163 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="L'Atelier du Bois — menuiserie artisanale, mobilier et créations sur mesure.">
-<title>L'Atelier du Bois — Artisan menuisier</title>
-<style>
-:root{
-  --cream:#f6f2ea;--paper:#fffdf8;--wood:#725238;--dark:#30251d;
-  --green:#536648;--line:#ded5c7;--muted:#71685f;--white:#fff;
-  --shadow:0 18px 50px rgba(48,37,29,.12);--radius:18px
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:var(--cream);line-height:1.6}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.12}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;object-fit:cover}
-.container{width:min(1160px,92%);margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font:700 22px Georgia,serif;letter-spacing:.02em}.logo small{display:block;font:9px Arial,sans-serif;letter-spacing:.18em;color:var(--muted);margin-top:1px}
-.nav{display:flex;align-items:center;gap:28px;font-size:14px}.nav a:hover{color:var(--green)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:4px;font-weight:700;font-size:14px;transition:.2s;border:1px solid transparent}
-.btn-green{background:var(--green);color:#fff}.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 20px #53664833}
-.btn-outline{border-color:#fff;color:#fff}.btn-outline:hover{background:#ffffff18}
-.hero{min-height:720px;padding-top:76px;display:flex;align-items:stretch}
-.hero-photo{min-height:644px;width:100%;background:linear-gradient(90deg,#000b 0%,#0006 38%,transparent 68%),url('https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1800&q=88') center/cover}
-.hero-inner{padding-top:150px;color:#fff;max-width:610px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700;margin-bottom:18px;color:#d6bd91}
-.hero h1{font-size:clamp(54px,7vw,88px);margin-bottom:22px}.hero p{font-size:17px;max-width:500px;margin-bottom:30px;color:#f0ebe3}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-section{padding:90px 0}.about{background:var(--paper)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.about-img{height:500px;border-radius:7px;overflow:hidden}.about-img img{height:100%}
-.about h2,.section-title{font-size:48px;margin-bottom:22px}.about p{color:var(--muted);margin-bottom:17px}
-.values{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:30px}
-.value{padding-top:18px;border-top:1px solid var(--line);font-size:13px}.value b{display:block;color:var(--green);font-size:23px;margin-bottom:5px}
-.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}.head p{max-width:480px;color:var(--muted);font-size:14px}
-.gallery{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-auto-rows:235px;gap:15px}.work{position:relative;overflow:hidden;border-radius:10px}.work:first-child{grid-row:span 2}.work img{height:100%;transition:.45s}.work:hover img{transform:scale(1.04)}.tag{position:absolute;left:13px;bottom:13px;background:#fffdf8e8;padding:7px 12px;border-radius:20px;font-size:12px}
-.services{background:var(--paper)}.service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.service{padding:32px 22px;border-right:1px solid var(--line);text-align:center}.service:last-child{border-right:0}.icon{font-size:28px;color:var(--green);margin-bottom:14px}.service h3{font-size:21px;margin-bottom:9px}.service p{font-size:12px;color:var(--muted)}
-.process{background:#eee7dc}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.step{border-top:1px solid #cfc2b0;padding-top:20px}.num{color:var(--green);font-weight:700}.step h3{font-size:22px;margin:15px 0 7px}.step p{font-size:13px;color:var(--muted)}
-.contact{background:var(--dark);color:#f5eee4}.contact h2{font-size:50px;color:#fff;margin-bottom:15px}.contact p{color:#cfc3b5;max-width:550px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.details{margin-top:28px;display:grid;gap:10px}.card{background:#fffaf2;color:var(--dark);padding:30px;border-radius:14px}.card h3{font-size:27px;margin-bottom:20px}input,textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:8px;margin-bottom:12px;font:inherit;background:#fff}textarea{height:120px;resize:vertical}.full{width:100%;border:0;cursor:pointer}
-footer{background:#281d16;color:#c9bbae;padding:24px 0;font-size:12px}footer .container{display:flex;justify-content:space-between}
-.whatsapp{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;z-index:60;display:grid;place-items:center;font-size:28px;box-shadow:0 12px 30px #0004}
-@media(max-width:900px){.nav{display:none}.grid2,.contact-grid{grid-template-columns:1fr;gap:35px}.hero-photo{min-height:650px}.service-grid{grid-template-columns:1fr 1fr}.service{border-bottom:1px solid var(--line)}.values{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.work:first-child{grid-row:span 1}.head{display:block}.head p{margin-top:10px}}
-@media(max-width:560px){section{padding:65px 0}.hero-inner{padding-top:100px}.hero h1{font-size:54px}.hero p{font-size:15px}.about h2,.section-title,.contact h2{font-size:38px}.about-img{height:370px}.gallery,.service-grid,.steps,.values{grid-template-columns:1fr}.service{border-right:0}.gallery{grid-auto-rows:250px}footer .container{display:block}.footer-note{margin-top:6px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier du Bois - Menuiserie Artisanale</title>
+    <style>
+        :root {
+            --primary-color: #5c3a21;
+            --secondary-color: #8c5a3c;
+            --bg-color: #f9f6f0;
+            --text-color: #2b2b2b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .contact-btn:hover {
+            background-color: #6a432c;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a href="#accueil" class="logo">L'ATELIER DU BOIS<small>ARTISAN MENUISIER</small></a>
-      <div class="nav">
-        <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#realisations">Réalisations</a>
-        <a href="#services">Services</a><a href="#commande">Comment commander</a><a href="#contact">Contact</a>
-        <a class="btn btn-green" href="#contact">Demander un devis</a>
-      </div>
-    </nav>
-  </div>
-</header>
+    <header>
+        <h1>L'Atelier du Bois</h1>
+        <p>Artisan menuisier camerounais — Création & Fabrication sur-mesure</p>
+    </header>
 
-<main>
-<section class="hero" id="accueil">
-  <div class="hero-photo"><div class="container"><div class="hero-inner">
-    <div class="eyebrow">Artisan menuisier</div>
-    <h1>Le bois,<br>notre passion.</h1>
-    <p>Créations uniques en bois massif, réalisées avec passion et savoir-faire pour des pièces durables et intemporelles.</p>
-    <div class="buttons"><a class="btn btn-green" href="#realisations">Voir nos réalisations →</a><a class="btn btn-outline" href="#contact">Nous contacter</a></div>
-  </div></div></div>
-</section>
+    <div class="container">
+        <h2 class="section-title">Nos Réalisations</h2>
+        
+        <div class="grid">
+            <!-- Exemple d'œuvre 1 -->
+            <div class="card">
+                <div class="card-img" style="background-color: #bbb;"><!-- Remplacez par votre image --></div>
+                <div class="card-content">
+                    <h3>Mobilier sur-mesure</h3>
+                    <p>Tables, chaises et meubles d'intérieur conçus avec des essences de bois nobles.</p>
+                </div>
+            </div>
 
-<section class="about" id="apropos">
-<div class="container grid2">
-  <div class="about-img"><img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=1000&q=88" alt="Atelier de menuiserie artisanale"></div>
-  <div>
-    <div class="eyebrow">À propos</div><h2>Un artisan passionné à votre service</h2>
-    <p>Menuisier artisan, je mets tout mon savoir-faire au service de vos projets en bois. Chaque création est réalisée avec soin, dans le respect du matériau et des finitions de qualité.</p>
-    <p>Du mobilier à l'aménagement intérieur, nous privilégions les lignes simples, les belles textures et les solutions pensées pour durer.</p>
-    <div class="values"><div class="value"><b>01</b>Bois sélectionnés avec soin</div><div class="value"><b>02</b>Travail artisanal et sur mesure</div><div class="value"><b>03</b>Finitions soignées</div><div class="value"><b>04</b>Passion & respect du bois</div></div>
-  </div>
-</div>
-</section>
+            <!-- Exemple d'œuvre 2 -->
+            <div class="card">
+                <div class="card-img" style="background-color: #aaa;"><!-- Remplacez par votre image --></div>
+                <div class="card-content">
+                    <h3>Menuiserie d'Extérieur</h3>
+                    <p>Portes, terrasses et aménagements extérieurs solides et durables.</p>
+                </div>
+            </div>
 
-<section id="realisations">
-<div class="container">
-  <div class="head"><div><div class="eyebrow">Le savoir-faire</div><h2 class="section-title">Nos réalisations</h2></div><p>Quelques inspirations de créations. Les dimensions, essences et finitions peuvent être adaptées à chaque projet.</p></div>
-  <div class="gallery">
-    <div class="work"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=88" alt="Table en bois"><span class="tag">Tables</span></div>
-    <div class="work"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=900&q=88" alt="Chaise en bois"><span class="tag">Chaises</span></div>
-    <div class="work"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=88" alt="Porte en bois"><span class="tag">Portes</span></div>
-    <div class="work"><img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=88" alt="Meuble en bois"><span class="tag">Meubles</span></div>
-    <div class="work"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=88" alt="Escalier intérieur"><span class="tag">Escaliers</span></div>
-  </div>
-</div>
-</section>
+            <!-- Exemple d'œuvre 3 -->
+            <div class="card">
+                <div class="card-img" style="background-color: #999;"><!-- Remplacez par votre image --></div>
+                <div class="card-content">
+                    <h3>Sculptures & Décoration</h3>
+                    <p>Pièces artisanales uniques sculptées à la main.</p>
+                </div>
+            </div>
+        </div>
 
-<section class="services" id="services">
-<div class="container"><div class="head"><div><div class="eyebrow">Notre expertise</div><h2 class="section-title">Nos services</h2></div><p>De la conception à la finition, nous donnons forme à vos idées avec un travail précis et personnalisé.</p></div>
-<div class="service-grid">
-  <div class="service"><div class="icon">✦</div><h3>Sur mesure</h3><p>Mobilier et aménagements uniques selon vos envies.</p></div>
-  <div class="service"><div class="icon">◌</div><h3>Restauration</h3><p>Redonnons vie à vos meubles anciens avec soin.</p></div>
-  <div class="service"><div class="icon">⌂</div><h3>Aménagement</h3><p>Optimisation et embellissement de vos espaces en bois.</p></div>
-  <div class="service"><div class="icon">⌁</div><h3>Menuiserie</h3><p>Portes, fenêtres, escaliers et autres ouvrages.</p></div>
-  <div class="service"><div class="icon">◇</div><h3>Finitions</h3><p>Vernis, huiles et patines pour un rendu durable.</p></div>
-</div></div>
-</section>
+        <div style="text-align: center; margin-top: 3rem;">
+            <h2>Un projet en tête ?</h2>
+            <p>Confiez-nous la réalisation de vos meubles et aménagements en bois.</p>
+            <a href="mailto:votre-email@example.com" class="contact-btn">Nous contacter</a>
+        </div>
+    </div>
 
-<section class="process" id="commande">
-<div class="container"><div class="head"><div><div class="eyebrow">Notre méthode</div><h2 class="section-title">Comment commander</h2></div></div>
-<div class="steps">
-  <div class="step"><span class="num">01</span><h3>Présentez votre projet</h3><p>Partagez votre idée, vos besoins et vos inspirations.</p></div>
-  <div class="step"><span class="num">02</span><h3>Devis personnalisé</h3><p>Nous étudions votre projet et vous envoyons une proposition.</p></div>
-  <div class="step"><span class="num">03</span><h3>Fabrication</h3><p>Votre pièce prend forme avec soin dans notre atelier.</p></div>
-  <div class="step"><span class="num">04</span><h3>Livraison & installation</h3><p>Nous livrons et installons votre réalisation selon le projet.</p></div>
-</div></div>
-</section>
+    <footer>
+        <p>&copy; 2026 Atelier du Bois. Tous droits réservés.</p>
+    </footer>
 
-<section class="contact" id="contact">
-<div class="container contact-grid">
-  <div><div class="eyebrow">Parlons de votre projet</div><h2>Une idée en tête ? Donnons-lui forme.</h2><p>Envoyez-nous quelques détails et nous vous répondrons pour échanger sur les possibilités de votre projet.</p>
-  <div class="details">☎ +237 6XX XX XX XX<br>✉ contact@atelierdubois.cm<br>⌖ Douala, Cameroun</div></div>
-  <div class="card"><h3>Demander un devis</h3>
-    <form onsubmit="sendWhatsApp(event)">
-      <input id="name" required placeholder="Votre nom"><input id="phone" required placeholder="Téléphone / WhatsApp">
-      <textarea id="message" required placeholder="Décrivez votre projet..."></textarea>
-      <button class="btn btn-green full">Envoyer ma demande</button>
-    </form>
-  </div>
-</div>
-</section>
-</main>
-
-<footer><div class="container"><div>© 2026 L'Atelier du Bois — Tous droits réservés.</div><div class="footer-note">Créé avec passion pour le bois.</div></div></footer>
-<a class="whatsapp" href="https://wa.me/2376XXXXXXXX" title="WhatsApp" aria-label="WhatsApp">◉</a>
-
-<script>
-function sendWhatsApp(e){
-  e.preventDefault();
-  const n=document.getElementById('name').value.trim(), p=document.getElementById('phone').value.trim(), m=document.getElementById('message').value.trim();
-  const text=encodeURIComponent("Bonjour, je suis "+n+". Mon numéro est "+p+".
-
-Mon projet : "+m);
-  window.open("https://wa.me/2376XXXXXXXX?text="+text,"_blank");
-}
-</script>
 </body>
 </html>
